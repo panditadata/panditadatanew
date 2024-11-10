@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PanditaData - Optimized Map Display</title>
+    <title>PanditaData - Organized Map Display</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="map-container">
-    <h1>Explore Weather and Geospatial Maps</h1>
-    <section class="map-section">
+    <h1>Explore Our Maps</h1>
+
+    <!-- Weather Maps Section -->
+    <div class="map-section" id="weather-maps">
         <h2>Weather Maps</h2>
         <div class="card-grid">
             <div class="card" data-iframe="path/to/weather-map1.html">
-                <img src="thumbnail/weather-map1.jpg" alt="Weather Map 1 Thumbnail">
+                <img src="thumbnail/weather-map1.jpg" alt="Weather Map 1">
                 <p>Weather Map 1</p>
             </div>
             <div class="card" data-iframe="path/to/weather-map2.html">
-                <img src="thumbnail/weather-map2.jpg" alt="Weather Map 2 Thumbnail">
+                <img src="thumbnail/weather-map2.jpg" alt="Weather Map 2">
                 <p>Weather Map 2</p>
             </div>
-            <!-- Add more cards as needed -->
         </div>
-    </section>
+    </div>
+
+    <!-- Geospatial Maps Section -->
+    <div class="map-section" id="geospatial-maps">
+        <h2>Geospatial Maps</h2>
+        <div class="card-grid">
+            <div class="card" data-iframe="path/to/geospatial-map1.html">
+                <img src="thumbnail/geospatial-map1.jpg" alt="Geospatial Map 1">
+                <p>Geospatial Map 1</p>
+            </div>
+            <div class="card" data-iframe="path/to/geospatial-map2.html">
+                <img src="thumbnail/geospatial-map2.jpg" alt="Geospatial Map 2">
+                <p>Geospatial Map 2</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Modal to load the iframe only when clicked -->
