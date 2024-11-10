@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PanditaData - Organized Map Display</title>
+    <title>PanditaData - Optimized Map Display</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,15 +11,15 @@
 <div class="map-container">
     <h1>Explore Our Maps</h1>
 
-  <!-- Weather Maps Section -->
+    <!-- Weather Maps Section -->
     <div class="map-section" id="weather-maps">
         <h2>Weather Maps</h2>
         <div class="card-grid">
-            <div class="card">
-                <iframe src="EQ_map.html" loading="lazy"></iframe>
+            <div class="card" data-iframe="EQ_map.html">
+                <iframe src="path/to/weather-map1.html" loading="lazy"></iframe>
                 <p>Weather Map 1</p>
             </div>
-            <div class="card">
+            <div class="card" data-iframe="path/to/weather-map2.html">
                 <iframe src="EQ_map.html" loading="lazy"></iframe>
                 <p>Weather Map 2</p>
             </div>
@@ -30,11 +30,11 @@
     <div class="map-section" id="geospatial-maps">
         <h2>Geospatial Maps</h2>
         <div class="card-grid">
-            <div class="card">
+            <div class="card" data-iframe="path/to/geospatial-map1.html">
                 <iframe src="EQ_map.html" loading="lazy"></iframe>
                 <p>Geospatial Map 1</p>
             </div>
-            <div class="card">
+            <div class="card" data-iframe="path/to/geospatial-map2.html">
                 <iframe src="EQ_map.html" loading="lazy"></iframe>
                 <p>Geospatial Map 2</p>
             </div>
@@ -42,10 +42,10 @@
     </div>
 </div>
 
-<!-- Modal to load the iframe only when clicked -->
+<!-- Modal to load the iframe in a larger view when clicked -->
 <div id="iframe-modal" class="modal">
-    <span class="close">&times;</span>
-    <iframe id="map-iframe" loading="lazy" frameborder="0"></iframe>
+    <span class="close" onclick="closeModal()">&times; Close</span>
+    <iframe id="modal-iframe" loading="lazy" frameborder="0"></iframe>
 </div>
 
 <script src="script.js"></script>
