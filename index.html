@@ -138,8 +138,9 @@ header nav a.active, header nav a:hover {
 }
 
 .card {
+    position: relative; /* Ensure stacking order */
     background-color: #ffffff;
-    border: 1px solid #ffccbc; /* Peach border */
+    border: 1px solid #ffccbc;
     border-radius: 15px;
     margin: 15px;
     width: 250px;
@@ -148,7 +149,6 @@ header nav a.active, header nav a:hover {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s, box-shadow 0.4s;
     cursor: pointer;
-    position: relative;
 }
 
 .card:hover {
@@ -249,6 +249,10 @@ header nav a.active, header nav a:hover {
     pointer-events: none; /* Prevent interaction in the card view */
     object-fit: cover; /* Ensures the map fills the card */
 }
+    .card h3, .card p {
+    position: relative;
+    z-index: 2; /* Make sure text is above iframe */
+}
 /* Footer Styles */
 footer {
     background-color: #4db6ac; /* Match with tab-container for harmony */
@@ -312,10 +316,12 @@ footer {
     <div class="card-grid">
         <!-- Map Card 1 -->
         <div class="card" data-map="https://panditadata.com/roblox1">
+            <div class="map-wrapper">
             <iframe src="https://panditadata.com/roblox1" title="Roblox Map 1" class="map-frame"></iframe>
             <h3>Adventure Island</h3>
             <p>Embark on an epic Roblox adventure!</p>
         </div>
+    </div>
 
         <!-- Map Card 2 -->
         <div class="card" data-map="https://panditadata.com/roblox2">
