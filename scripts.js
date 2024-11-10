@@ -1,29 +1,21 @@
-// Modal elements
+// Get modal elements
 const modal = document.getElementById("iframe-modal");
-const mapIframe = document.getElementById("map-iframe");
-const closeModal = document.querySelector(".close");
+const modalIframe = document.getElementById("modal-iframe");
+const closeModalButton = document.querySelector(".close");
 
-// Open modal and load the iframe source
+// Function to open modal and load iframe source
 function openModal(iframeSrc) {
-    mapIframe.src = iframeSrc;
+    modalIframe.src = iframeSrc;
     modal.style.display = "flex";
 }
 
-// Close modal and clear iframe source
-closeModal.onclick = function () {
+// Function to close modal and clear iframe source
+function closeModal() {
     modal.style.display = "none";
-    mapIframe.src = ""; // Clears the iframe to stop loading
+    modalIframe.src = ""; // Clear the iframe to stop loading
 }
 
-// Close modal when clicking outside the iframe
-window.onclick = function (event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-        mapIframe.src = "";
-    }
-}
-
-// Attach click events to each card for lazy loading
+// Attach click event to each card to open modal with corresponding iframe
 document.querySelectorAll(".card").forEach(card => {
     card.addEventListener("click", () => {
         const iframeSrc = card.getAttribute("data-iframe");
