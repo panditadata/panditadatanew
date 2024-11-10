@@ -1,54 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M75GGT48');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SCMGKMFMQH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SCMGKMFMQH');
+</script>
+
+<!-- TikTok Pixel Code -->
+<script>
+    !function (w, d, t) {
+        w.TiktokAnalyticsObject = t;
+        var ttq = w[t] = w[t] || [];
+        ttq.methods = ["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+        ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } };
+        for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+        ttq.instance = function (t) { var e = ttq._i[t] || []; return e.push.apply(e, arguments), ttq._i[t] = e, e };
+        ttq.load = function (e, n) {
+            var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
+            ttq._i = ttq._i || {};
+            ttq._i[e] = [];
+            ttq._i[e]._u = i;
+            ttq._t = ttq._t || {};
+            ttq._t[e] = +new Date;
+            ttq._o = ttq._o || {};
+            ttq._o[e] = n || {};
+            var o = document.createElement("script");
+            o.type = "text/javascript";
+            o.async = !0;
+            o.src = i + "?sdkid=" + e + "&lib=" + t;
+            var a = document.getElementsByTagName("script")[0];
+            a.parentNode.insertBefore(o, a)
+        };
+        ttq.load('CSIBRKRC77U8G0CRBM20');
+        ttq.page();
+    }(window, document, 'ttq');
+</script>
+<!-- End TikTok Pixel Code -->
     <meta charset="UTF-8">
+    <title>Fun Maps - PanditaData</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PanditaData - Optimized Map Display</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Link to your CSS file -->
+<style>/* General Styles */
+/* General Styles */
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9fafc; /* Light neutral background */
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #e57373; /* Soft coral */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #ffe0b2; /* Light peach for a warm, inviting feel */
+}
+
+header p {
+    margin: 5px 0 15px;
+    font-size: 16px;
+}
+
+header nav a {
+    color: #ffe0b2;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a.active, header nav a:hover {
+    color: #ffcc80; /* Slightly deeper peach for hover effect */
+}
+
+/* Tab Navigation Styles */
+.tab-container {
+    display: flex;
+    justify-content: center;
+    background-color: #4db6ac; /* Muted teal for balance */
+}
+
+.tab-button {
+    background-color: inherit;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.tab-button:hover {
+    background-color: #80cbc4; /* Lighter teal on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.tab-button.active {
+    background-color: #00897b; /* Darker teal for active state */
+}
+
+/* Tab Content Styles */
+.tab-content {
+    display: none;
+    padding: 40px 20px;
+    background-color: #fce4ec; /* Light blush for a soft, warm background */
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Card Grid Styles */
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ffccbc; /* Peach border */
+    border-radius: 15px;
+    margin: 15px;
+    width: 250px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s, box-shadow 0.4s;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05); /* Lift and zoom effect */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.card:hover img {
+    opacity: 0.85;
+}
+
+.card h3 {
+    margin: 15px 0 5px;
+    font-size: 22px;
+    color: #e57373; /* Soft coral text */
+}
+
+.card p {
+    padding: 0 15px 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Shiny Hover Effect for Cards */
+.card::after {
+    content: '';
+    position: absolute;
+    top: -75%;
+    left: -75%;
+    width: 50%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(45deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover::after {
+    left: 120%;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1000px;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.close-button {
+    color: #e57373; /* Coral for close button */
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#map-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.map-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%; /* Increase width to show more map content */
+    height: 300%; /* Increase height accordingly */;
+    transform: scale(0.3); /* Scale down to fit more of the map in view */
+    transform-origin: top left;
+    border-radius: 10px;
+    pointer-events: none; /* Prevent interaction in the card view */
+    object-fit: cover; /* Ensures the map fills the card */
+}
+/* Footer Styles */
+footer {
+    background-color: #4db6ac; /* Match with tab-container for harmony */
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+.thumbnail .item iframe {
+    position: absolute;
+    inset: 0;
+    width: 300%; /* Increase width to display more map content */
+    height: 300%; /* Increase height accordingly */
+    transform: scale(0.3); /* Lower the scale to show more of the map */
+    transform-origin: top left;
+    object-fit: cover;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.thumbnail-map .item map {
+    width: 300%; /* Increase width to display more map content */
+    height: 300%; /* Increase height accordingly */
+    transform: scale(0.3); /* Adjust scale as needed */
+    transform-origin: top left;
+    object-fit: cover;
+    border-radius: 10px !important;
+}
+
+</style>
 </head>
 <body>
+    <!-- Header Section -->
+    <header>
+        <h1>Fun Maps</h1>
+        <p>Explore interactive and imaginative worlds beyond traditional geospatial mapping.</p>
+        <nav>
+            <a href="index.html">Geospatial Maps</a>
+            <a href="fun-maps.html" class="active">Fun Maps</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
 
-<div class="map-container">
-    <h1>Explore Our Maps</h1>
+    <!-- Tab Navigation -->
+    <div class="tab-container">
+        <button class="tab-button active" data-tab="roblox">Roblox Worlds</button>
+        <button class="tab-button" data-tab="fantasy">Fantasy Maps</button>
+        <button class="tab-button" data-tab="educational">Educational Maps</button>
+        <button class="tab-button" data-tab="more">More Fun Maps</button>
+    </div>
+<!-- Modal Structure for Displaying Map in Overlay -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <iframe id="map-iframe" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+  <!-- Tab Content -->
+<!-- Roblox Maps Section with Full URL in data-map -->
+<div class="tab-content active" id="roblox">
+    <div class="card-grid">
+        <!-- Map Card 1 -->
+        <div class="card" data-map="https://panditadata.com/roblox1">
+            <iframe src="https://panditadata.com/roblox1" title="Roblox Map 1" class="map-frame"></iframe>
+            <h3>Adventure Island</h3>
+            <p>Embark on an epic Roblox adventure!</p>
+        </div>
 
-    <!-- Weather Maps Section -->
-    <div class="map-section" id="weather-maps">
-        <h2>Weather Maps</h2>
-        <div class="card-grid">
-            <div class="card" data-iframe="path/to/weather-map1.html">
-                <iframe src="EQ_map.html" loading="lazy"></iframe>
-                <p>Weather Map 1</p>
-            </div>
-            <div class="card" data-iframe="path/to/weather-map2.html">
-                <iframe src="EQ_map.html" loading="lazy"></iframe>
-                <p>Weather Map 2</p>
-            </div>
+        <!-- Map Card 2 -->
+        <div class="card" data-map="https://panditadata.com/roblox2">
+            <iframe src="https://panditadata.com/roblox2" title="Roblox Map 2" class="map-frame"></iframe>
+            <h3>City Builder</h3>
+            <p>Create your own metropolis!</p>
         </div>
     </div>
+</div>
+    <div class="tab-content active" id="roblox">
+    <div class="card-grid">
+        <!-- Map Card 1 -->
+        <div class="card" data-map="https://panditadata.com/roblox1">
+            <iframe src="https://panditadata.com/roblox1" title="Roblox Map 1" class="map-frame"></iframe>
+            <h3>Adventure Island</h3>
+            <p>Embark on an epic Roblox adventure!</p>
+        </div>
 
-    <!-- Geospatial Maps Section -->
-    <div class="map-section" id="geospatial-maps">
-        <h2>Geospatial Maps</h2>
-        <div class="card-grid">
-            <div class="card" data-iframe="path/to/geospatial-map1.html">
-                <iframe src="EQ_map.html" loading="lazy"></iframe>
-                <p>Geospatial Map 1</p>
-            </div>
-            <div class="card" data-iframe="path/to/geospatial-map2.html">
-                <iframe src="EQ_map.html" loading="lazy"></iframe>
-                <p>Geospatial Map 2</p>
-            </div>
+        <!-- Map Card 2 -->
+        <div class="card" data-map="https://panditadata.com/roblox2">
+            <iframe src="https://panditadata.com/roblox2" title="Roblox Map 2" class="map-frame"></iframe>
+            <h3>City Builder</h3>
+            <p>Create your own metropolis!</p>
+        </div>
+    </div>
+</div>
+    <div class="tab-content active" id="roblox">
+    <div class="card-grid">
+        <!-- Map Card 1 -->
+        <div class="card" data-map="https://panditadata.com/roblox1">
+            <iframe src="https://panditadata.com/roblox1" title="Roblox Map 1" class="map-frame"></iframe>
+            <h3>Adventure Island</h3>
+            <p>Embark on an epic Roblox adventure!</p>
+        </div>
+
+        <!-- Map Card 2 -->
+        <div class="card" data-map="https://panditadata.com/roblox2">
+            <iframe src="https://panditadata.com/roblox2" title="Roblox Map 2" class="map-frame"></iframe>
+            <h3>City Builder</h3>
+            <p>Create your own metropolis!</p>
+        </div>
+    </div>
+</div>
+    <div class="tab-content active" id="roblox">
+    <div class="card-grid">
+        <!-- Map Card 1 -->
+        <div class="card" data-map="https://panditadata.com/roblox1">
+            <iframe src="https://panditadata.com/roblox1" title="Roblox Map 1" class="map-frame"></iframe>
+            <h3>Adventure Island</h3>
+            <p>Embark on an epic Roblox adventure!</p>
+        </div>
+
+        <!-- Map Card 2 -->
+        <div class="card" data-map="https://panditadata.com/roblox2">
+            <iframe src="https://panditadata.com/roblox2" title="Roblox Map 2" class="map-frame"></iframe>
+            <h3>City Builder</h3>
+            <p>Create your own metropolis!</p>
+        </div>
+    </div>
+</div>
+    <div class="tab-content active" id="roblox">
+    <div class="card-grid">
+        <!-- Map Card 1 -->
+        <div class="card" data-map="https://panditadata.com/roblox1">
+            <iframe src="https://panditadata.com/roblox1" title="Roblox Map 1" class="map-frame"></iframe>
+            <h3>Adventure Island</h3>
+            <p>Embark on an epic Roblox adventure!</p>
+        </div>
+
+        <!-- Map Card 2 -->
+        <div class="card" data-map="https://panditadata.com/roblox2">
+            <iframe src="https://panditadata.com/roblox2" title="Roblox Map 2" class="map-frame"></iframe>
+            <h3>City Builder</h3>
+            <p>Create your own metropolis!</p>
+        </div>
+    </div>
+</div>
+    <div class="tab-content active" id="roblox">
+    <div class="card-grid">
+        <!-- Map Card 1 -->
+        <div class="card" data-map="https://panditadata.com/roblox1">
+            <iframe src="https://panditadata.com/roblox1" title="Roblox Map 1" class="map-frame"></iframe>
+            <h3>Adventure Island</h3>
+            <p>Embark on an epic Roblox adventure!</p>
+        </div>
+
+        <!-- Map Card 2 -->
+        <div class="card" data-map="https://panditadata.com/roblox2">
+            <iframe src="https://panditadata.com/roblox2" title="Roblox Map 2" class="map-frame"></iframe>
+            <h3>City Builder</h3>
+            <p>Create your own metropolis!</p>
         </div>
     </div>
 </div>
 
-<!-- Modal to load the iframe only when clicked -->
-<div id="iframe-modal" class="modal" style="display: flex;">
+    <div class="tab-content" id="fantasy">
+        <!-- Map Cards for Fantasy Maps -->
+        <div class="card-grid">
+            <!-- Map Card 1 -->
+            <div class="card" data-map="path/to/fantasy-map1.html">
+                <img src="path/to/fantasy-map1-thumbnail.jpg" alt="Fantasy Map 1">
+                <h3>Dragon Realm</h3>
+                <p>Explore the mystical land of dragons.</p>
+            </div>
+            <!-- Add more map cards as needed -->
+        </div>
+    </div>
 
-    <span class="close" onclick="closeModal()">&times; Close</span>
-    <iframe id="modal-iframe" loading="lazy" frameborder="0"></iframe>
-</div>
+    <div class="tab-content" id="educational">
+        <!-- Map Cards for Educational Maps -->
+        <div class="card-grid">
+            <!-- Map Card 1 -->
+            <div class="card" data-map="https://panditadata.com/EQ_mapAF.html">
+                <iframe src="https://panditadata.com/EQ_mapAF.html" title="Routes" class="map-frame"></iframe>
+                <h3>Routes Through the Sea</h3>
+                <p>Maritine Route.</p>
+            </div>
+            <!-- Add more map cards as needed -->
+        </div>
+    </div>
 
-<script src="script.js"></script>
+    <div class="tab-content" id="more">
+        <!-- Map Cards for More Fun Maps -->
+        <div class="card-grid">
+            <!-- Map Card 1 -->
+            <div class="card" data-map="path/to/fun-map1.html">
+                <img src="path/to/fun-map1-thumbnail.jpg" alt="Fun Map 1">
+                <h3>Mystery Land</h3>
+                <p>Uncover secrets in this mysterious world.</p>
+            </div>
+            <!-- Add more map cards as needed -->
+        </div>
+    </div>
+
+    <!-- Modal Structure for Map Display -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <iframe src="" id="map-iframe" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 PanditaData. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script>document.addEventListener('DOMContentLoaded', () => {
+    // Tab Navigation
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to selected button and content
+            button.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+
+    // Modal Functionality
+    const modal = document.getElementById('modal');
+    const modalClose = document.querySelector('.close-button');
+    const mapIframe = document.getElementById('map-iframe');
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const mapUrl = card.getAttribute('data-map');
+            mapIframe.src = mapUrl;
+            modal.style.display = 'block';
+        });
+    });
+
+    modalClose.addEventListener('click', () => {
+        modal.style.display = 'none';
+        mapIframe.src = '';
+    });
+
+    // Close modal when clicking outside of the content
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            mapIframe.src = '';
+        }
+    });
+});
+</script>
 </body>
 </html>
