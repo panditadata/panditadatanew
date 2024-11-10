@@ -1,7 +1,6 @@
 // Get modal elements
 const modal = document.getElementById("iframe-modal");
 const modalIframe = document.getElementById("modal-iframe");
-const closeModalButton = document.querySelector(".close");
 
 // Function to open modal and load iframe source
 function openModal(iframeSrc) {
