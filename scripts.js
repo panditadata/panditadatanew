@@ -1,48 +1,34 @@
-// JavaScript for 3D Globe Animation (scripts.js)
-import * as THREE from 'three';
+// Get modal elements
+const modal = document.getElementById("iframe-modal");
+const mapIframe = document.getElementById("map-iframe");
+const closeModal = document.querySelector(".close");
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector("#globeCanvas") });
-
-renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.z = 3;
-
-// Earth Texture
-const textureLoader = new THREE.TextureLoader();
-const earthTexture = textureLoader.load('path/to/earth_texture.jpg');  // Add texture image path
-const globe = new THREE.Mesh(new THREE.SphereGeometry(1, 50, 50), new THREE.MeshBasicMaterial({ map: earthTexture }));
-
-scene.add(globe);
-
-function animate() {
-    requestAnimationFrame(animate);
-    globe.rotation.y += 0.001;  // Slow rotation
-    renderer.render(scene, camera);
+// Function to open modal and load iframe
+function openModal(iframeSrc) {
+    mapIframe.src = iframeSrc;
+    modal.style.display = "flex";
 }
 
-animate();
-
-
-
-// scripts.js
-function scrollToSections() {
-    document.getElementById("map-categories").scrollIntoView({ behavior: "smooth" });
+// Close the modal and reset the iframe
+closeModal.onclick = function () {
+    modal.style.display = "none";
+    mapIframe.src = ""; // Clear iframe to stop loading when closed
 }
 
-function filterMaps() {
-    const searchTerm = document.getElementById("mapSearch").value.toLowerCase();
-    const cards = document.querySelectorAll(".card");
+// Close modal when clicking outside the iframe
+window.onclick = function (event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+        mapIframe.src = "";
+    }
+}
 
-    cards.forEach(card => {
-        const title = card.textContent.toLowerCase();
-        card.style.display = title.includes(searchTerm) ? "block" : "none";
+// Attach click events to each card
+document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => {
+        const iframeSrc = card.getAttribute("data-iframe");
+        openModal(iframeSrc);
     });
-}
-function filterMaps() {
-    const query = document.getElementById("mapSearch").value.toLowerCase();
-    document.querySelectorAll(".category").forEach(category => {
-        category.style.display = category.textContent.toLowerCase().includes(query) ? "block" : "none";
-    });
-}
+});
+
 
