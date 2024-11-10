@@ -1,86 +1,59 @@
-/* styles.css */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    background-color: #000000;
-}
-
-.landing-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: black;
-    position: relative;
-    overflow: hidden;
-}
-
-.map-animation {
-    /* Placeholder for animated world map */
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    opacity: 0.2;
-    /* Add animation styles here */
-}
-
-.intro {
-    position: relative;
-    text-align: center;
-    z-index: 1;
-}
-
-button {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-.map-categories {
+/* Basic styles for the container and card grid */
+.map-container {
     padding: 20px;
+    font-family: Arial, sans-serif;
     text-align: center;
 }
 
-.categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.category {
-    margin: 20px;
-    max-width: 300px;
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .card {
-    background-color: #111111;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 10px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.2s ease-in-out;
 }
 
 .card:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
-iframe {
+.card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 200px;
-    border: none;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal iframe {
+    width: 90%;
+    height: 80vh;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
 }
