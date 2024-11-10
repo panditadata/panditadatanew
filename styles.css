@@ -11,20 +11,18 @@ body {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin-top: 10px;
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    gap: 20px; /* Adjust gap between cards as needed */
 }
 
 .card {
-    background-color: #99c2ff;
-    border: 1px solid #337ab7;
-    border-radius: 8px;
+    /* Styles for each card */
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 139, 0.2);
-    cursor: pointer;
-    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 .card iframe {
     width: 100%;
@@ -32,6 +30,10 @@ body {
     border: none;
 }
 
+.map-frame {
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
+}
 /* Modal for Full Map View */
 .modal {
     display: none; /* Hidden by default */
