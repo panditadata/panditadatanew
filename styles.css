@@ -1,31 +1,35 @@
-/* Container and basic styles */
+/* Body and Container Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f4fa; /* Light blue background */
+    background-color: #e6f2ff; /* Very light blue background */
 }
 
 .map-container {
     padding: 20px;
     text-align: center;
+    background-color: #e6f2ff; /* Matches body for consistency */
 }
 
 .map-container h1 {
-    color: #003366; /* Dark blue */
+    color: #003366; /* Dark blue for title */
 }
 
+/* Map Section Styling */
 .map-section {
-    background-color: #e0ebf7; /* Soft blue for each section */
-    border-radius: 8px;
-    padding: 15px;
+    background-color: #cce0ff; /* Light blue background for each section */
+    border: 2px solid #6699cc; /* Medium blue border */
+    border-radius: 10px;
+    padding: 20px;
     margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 139, 0.2); /* Subtle blue shadow */
+    box-shadow: 0 4px 8px rgba(0, 51, 102, 0.2); /* Darker blue shadow */
 }
 
 .map-section h2 {
-    color: #004080; /* Medium blue for section titles */
+    color: #004080; /* Darker blue for section titles */
+    font-weight: bold;
 }
 
-/* Card grid and cards */
+/* Card Grid and Individual Card Styling */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -34,17 +38,19 @@ body {
 }
 
 .card {
-    background-color: #b3cde3; /* Lighter blue card background */
-    border: 1px solid #6699cc; /* Border with a shade of blue */
+    background-color: #99c2ff; /* Light blue card background */
+    border: 1px solid #337ab7; /* Border in medium blue */
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 139, 0.2); /* Soft shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 139, 0.2); /* Soft blue shadow */
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
+    text-align: center;
 }
 
 .card:hover {
     transform: scale(1.05);
+    background-color: #80bfff; /* Slightly darker blue on hover */
 }
 
 .card img {
@@ -52,7 +58,7 @@ body {
     border-radius: 5px;
 }
 
-/* Modal for iframe display */
+/* Modal for Iframe Display */
 .modal {
     display: none;
     position: fixed;
@@ -60,7 +66,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 51, 0.8); /* Dark blue overlay */
+    background: rgba(0, 0, 51, 0.9); /* Dark blue overlay */
     align-items: center;
     justify-content: center;
     z-index: 1000;
@@ -79,4 +85,34 @@ body {
     color: white;
     font-size: 30px;
     cursor: pointer;
+}
+/* Card Styling with Iframe */
+.card iframe {
+    width: 100%;
+    height: 200px; /* Adjust height as needed to fit the card */
+    border: none;
+    transform: scale(0.9); /* Zoom out slightly to show more map */
+    transform-origin: 0 0; /* Anchor to top left to prevent centering issues */
+    border-radius: 5px;
+}
+
+.card {
+    background-color: #99c2ff; /* Light blue card background */
+    border: 1px solid #337ab7; /* Border in medium blue */
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 139, 0.2); /* Soft shadow */
+    cursor: pointer;
+    text-align: center;
+}
+
+.card p {
+    margin-top: 10px;
+    color: #003366; /* Dark blue for text */
+}
+
+/* Responsive Modal Styling */
+.modal iframe {
+    width: 100%;
+    height: 80vh;
 }
