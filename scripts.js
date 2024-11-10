@@ -39,3 +39,10 @@ function filterMaps() {
         card.style.display = title.includes(searchTerm) ? "block" : "none";
     });
 }
+function filterMaps() {
+    const query = document.getElementById("mapSearch").value.toLowerCase();
+    document.querySelectorAll(".category").forEach(category => {
+        category.style.display = category.textContent.toLowerCase().includes(query) ? "block" : "none";
+    });
+}
+
