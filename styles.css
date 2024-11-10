@@ -1,118 +1,67 @@
-/* Body and Container Styling */
+/* Container and Section Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e6f2ff; /* Very light blue background */
+    background-color: #e6f2ff;
 }
 
 .map-container {
     padding: 20px;
     text-align: center;
-    background-color: #e6f2ff; /* Matches body for consistency */
 }
 
 .map-container h1 {
-    color: #003366; /* Dark blue for title */
+    color: #003366;
 }
 
-/* Map Section Styling */
+/* Section Styling with Light Blue Frame */
 .map-section {
-    background-color: #cce0ff; /* Light blue background for each section */
-    border: 2px solid #6699cc; /* Medium blue border */
+    background-color: #cce0ff;
+    border: 2px solid #6699cc;
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 51, 102, 0.2); /* Darker blue shadow */
+    box-shadow: 0 4px 8px rgba(0, 51, 102, 0.2);
 }
 
 .map-section h2 {
-    color: #004080; /* Darker blue for section titles */
+    color: #004080;
     font-weight: bold;
 }
 
-/* Card Grid and Individual Card Styling */
+/* Card Grid - 4 Columns */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 4 columns for 600px width */
     gap: 15px;
     margin-top: 10px;
 }
 
+/* Individual Card Styling */
 .card {
-    background-color: #99c2ff; /* Light blue card background */
-    border: 1px solid #337ab7; /* Border in medium blue */
+    background-color: #99c2ff;
+    border: 1px solid #337ab7;
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 139, 0.2); /* Soft blue shadow */
-    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 139, 0.2);
     cursor: pointer;
     text-align: center;
 }
 
 .card:hover {
-    transform: scale(1.05);
-    background-color: #80bfff; /* Slightly darker blue on hover */
-}
-
-.card img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-/* Modal for Iframe Display */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 51, 0.9); /* Dark blue overlay */
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.modal iframe {
-    width: 90%;
-    height: 80vh;
-    border-radius: 10px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-}
-/* Card Styling with Iframe */
-.card iframe {
-    width: 100%;
-    height: 200px; /* Adjust height as needed to fit the card */
-    border: none;
-    transform: scale(0.9); /* Zoom out slightly to show more map */
-    transform-origin: 0 0; /* Anchor to top left to prevent centering issues */
-    border-radius: 5px;
-}
-
-.card {
-    background-color: #99c2ff; /* Light blue card background */
-    border: 1px solid #337ab7; /* Border in medium blue */
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 139, 0.2); /* Soft shadow */
-    cursor: pointer;
-    text-align: center;
+    background-color: #80bfff;
 }
 
 .card p {
-    margin-top: 10px;
-    color: #003366; /* Dark blue for text */
+    margin-top: 5px;
+    color: #003366;
 }
 
-/* Responsive Modal Styling */
-.modal iframe {
+/* Smaller Iframe with Enhanced Scaling */
+.card iframe {
     width: 100%;
-    height: 80vh;
+    height: 130px; /* Compact height for 4-column layout */
+    border: none;
+    transform: scale(0.85); /* Zoom out a bit more to show more map */
+    transform-origin: 0 0;
+    border-radius: 5px;
 }
