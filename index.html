@@ -3,47 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PanditaData - Immersive Maps</title>
+    <title>PanditaData - Optimized Map Display</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Landing Page Section -->
-    <section class="landing-page">
-        <div class="map-animation">
-            <!-- 3D world map animation will go here -->
-        </div>
-        <div class="intro">
-            <h1>PanditaData</h1>
-            <p>The Ultimate Destination for Immersive Digital Maps</p>
-            <button onclick="scrollToSections()">Explore Maps</button>
-        </div>
-    </section>
 
-    <!-- Map Categories Section -->
-    <section class="map-categories" id="map-categories">
-        <h2>Explore by Category</h2>
-        <div class="search-bar">
-            <input type="text" placeholder="Search maps..." id="mapSearch" oninput="filterMaps()">
-        </div>
-        <div class="categories">
-            <!-- Example category -->
-            <div class="category" id="weather">
-                <h3>Weather Maps</h3>
-                <div class="card">
-                    <iframe src="image/temperatureworld.html"></iframe>
-                    <p>Temperature World Map</p>
-                </div>
+<div class="map-container">
+    <h1>Explore Weather and Geospatial Maps</h1>
+    <section class="map-section">
+        <h2>Weather Maps</h2>
+        <div class="card-grid">
+            <div class="card" data-iframe="path/to/weather-map1.html">
+                <img src="thumbnail/weather-map1.jpg" alt="Weather Map 1 Thumbnail">
+                <p>Weather Map 1</p>
             </div>
-            <!-- Add more categories and cards as needed -->
+            <div class="card" data-iframe="path/to/weather-map2.html">
+                <img src="thumbnail/weather-map2.jpg" alt="Weather Map 2 Thumbnail">
+                <p>Weather Map 2</p>
+            </div>
+            <!-- Add more cards as needed -->
         </div>
     </section>
+</div>
 
-    <!-- Footer with links to other websites -->
-    <footer>
-        <button onclick="window.location.href='https://marsoncall.com'">Visit Mars on Call</button>
-        <button onclick="window.location.href='https://panditanimation.com'">Visit Pandita Animation</button>
-    </footer>
+<!-- Modal to load the iframe only when clicked -->
+<div id="iframe-modal" class="modal">
+    <span class="close">&times;</span>
+    <iframe id="map-iframe" loading="lazy" frameborder="0"></iframe>
+</div>
 
-    <script src="scripts.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
