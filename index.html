@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanditaData - Immersive Maps</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Landing Page Section -->
+    <section class="landing-page">
+        <div class="map-animation">
+            <!-- 3D world map animation will go here -->
+        </div>
+        <div class="intro">
+            <h1>PanditaData</h1>
+            <p>The Ultimate Destination for Immersive Digital Maps</p>
+            <button onclick="scrollToSections()">Explore Maps</button>
+        </div>
+    </section>
+
+    <!-- Map Categories Section -->
+    <section class="map-categories" id="map-categories">
+        <h2>Explore by Category</h2>
+        <div class="search-bar">
+            <input type="text" placeholder="Search maps..." id="mapSearch" oninput="filterMaps()">
+        </div>
+        <div class="categories">
+            <!-- Example category -->
+            <div class="category" id="weather">
+                <h3>Weather Maps</h3>
+                <div class="card">
+                    <iframe src="image/temperatureworld.html"></iframe>
+                    <p>Temperature World Map</p>
+                </div>
+            </div>
+            <!-- Add more categories and cards as needed -->
+        </div>
+    </section>
+
+    <!-- Footer with links to other websites -->
+    <footer>
+        <button onclick="window.location.href='https://marsoncall.com'">Visit Mars on Call</button>
+        <button onclick="window.location.href='https://panditanimation.com'">Visit Pandita Animation</button>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
